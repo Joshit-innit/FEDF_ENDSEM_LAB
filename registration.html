@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<body>
+  <h2>Enter your details</h2>
+
+  Name: <input type="text" id="name"><br><br>
+  Number: <input type="number" id="number"><br><br>
+  Email: <input type="email" id="email"><br><br>
+
+  <button id="submitBtn">Submit</button>
+
+  <p id="result"></p>
+
+  <script>
+    
+    document.getElementById("submitBtn").addEventListener("click", function () {
+   
+      const name = document.getElementById("name").value;
+      const number = document.getElementById("number").value;
+      const email = document.getElementById("email").value;
+
+      
+      if(name == "" || number == "" || email == ""){
+        console.log("Please fill out all fields.");
+        return;
+      }
+      else if(!email.includes("@")){
+        console.log("Please enter a valid email address.");
+        return;
+      }
+      else if(isNaN(number) || number.length < 5){
+        console.log("Please enter a valid number.");
+        return;
+      }
+      
+    });
+  </script>
+</body>
+</html>
